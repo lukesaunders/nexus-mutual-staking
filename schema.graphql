@@ -1,6 +1,27 @@
-type ExampleEntity @entity {
+type Stake @entity {
   id: ID!
-  count: BigInt!
-  contractAddress: Bytes! # address
-  amount: BigInt! # uint256
+  contractAddress: Bytes!
+  staker: Bytes!
+  amount: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}
+
+type UnstakeRequest @entity {
+  id: ID!
+  contractAddress: Bytes!
+  staker: Bytes!
+  amount: BigInt!
+  unstakeAt: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}
+
+type Unstake @entity {
+  id: ID!
+  contractAddress: Bytes!
+  stakerAddress: Bytes!
+  amount: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
 }
