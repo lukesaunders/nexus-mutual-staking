@@ -47,4 +47,4 @@ dataSources:
       callHandlers:
         - function: addStake(address,address,uint256)
           handler: handleAddStake
-      file: Contract/Contract.wasm
+      file: ContractOld/ContractOld.wasm

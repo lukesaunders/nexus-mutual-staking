@@ -8,11 +8,11 @@ export function handleAddStake(call: AddStakeCall): void {
   let id = call.transaction.hash.toHex()
   let entity = new StakeOld(id)
 
-  entity.contractAddress = event.params.stakedContractAddress
-  entity.staker = event.params.stakerAddress
-  entity.amount = event.params.amount
-  entity.blockNumber = event.block.number
-  entity.blockTimestamp = event.block.timestamp
+  entity.contractAddress = call.inputs._stakedContractAddress
+  entity.staker = call.inputs._stakerAddress
+  entity.amount = call.inputs._amount
+  entity.blockNumber = call.block.number
+  entity.blockTimestamp = call.block.timestamp
 
   entity.save()
 }
