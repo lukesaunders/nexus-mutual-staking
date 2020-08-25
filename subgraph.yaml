@@ -48,3 +48,43 @@ dataSources:
         - function: addStake(address,address,uint256)
           handler: handleAddStake
       file: ./src/mappingOld.ts
+  - kind: ethereum/contract
+    name: ContractRichardOne
+    network: mainnet
+    source:
+      address: "0xdf50a17bf58dea5039b73683a51c4026f3c7224e"
+      abi: Contract
+      startBlock: 7815782
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - StakedOld
+      abis:
+        - name: Contract
+          file: ./abis/ContractRichardOne.json
+      callHandlers:
+        - function: addStake(address,uint256)
+          handler: handleAddStake
+      file: ./src/mappingRichard.ts      
+  - kind: ethereum/contract
+    name: ContractRichardTwo
+    network: mainnet
+    source:
+      address: "0xa94c7e87e212669baee95d5d45305d05e6b8a28f"
+      abi: Contract
+      startBlock: 7815782
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - StakedOld
+      abis:
+        - name: Contract
+          file: ./abis/ContractRichardTwo.json
+      callHandlers:
+        - function: addStake(address,uint256)
+          handler: handleAddStake
+      file: ./src/mappingRichard.ts            
