@@ -7,6 +7,15 @@ type Stake @entity {
   blockTimestamp: BigInt!
 }
 
+type StakeOld @entity {
+  id: ID!
+  contractAddress: Bytes!
+  staker: Bytes!
+  amount: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}
+
 type UnstakeRequest @entity {
   id: ID!
   contractAddress: Bytes!

@@ -28,3 +28,23 @@ dataSources:
         - event: Unstaked(indexed address,indexed address,uint256)
           handler: handleUnstaked
       file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: ContractOld
+    network: mainnet
+    source:
+      address: "0xe20b3ae826cdb43676e418f7c3b84b75b5697a40"
+      abi: Contract
+      startBlock: 7815782
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - StakedOld
+      abis:
+        - name: Contract
+          file: ./abis/ContractOld.json
+      callHandlers:
+        - function: addStake(address,address,uint256)
+          handler: handleAddStake
+      file: ./src/mapping.ts
