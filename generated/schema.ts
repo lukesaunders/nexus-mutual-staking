@@ -212,13 +212,13 @@ export class Unstake extends Entity {
     this.set("contractAddress", Value.fromBytes(value));
   }
 
-  get stakerAddress(): Bytes {
-    let value = this.get("stakerAddress");
+  get staker(): Bytes {
+    let value = this.get("staker");
     return value.toBytes();
   }
 
-  set stakerAddress(value: Bytes) {
-    this.set("stakerAddress", Value.fromBytes(value));
+  set staker(value: Bytes) {
+    this.set("staker", Value.fromBytes(value));
   }
 
   get amount(): BigInt {

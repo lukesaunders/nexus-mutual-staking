@@ -4,11 +4,11 @@ import {
   UnstakeRequested,
   Unstaked,
 } from "../generated/Contract/Contract"
-import { Stake, UnstakedRequest, Unstake } from "../generated/schema"
+import { Stake, UnstakeRequest, Unstake } from "../generated/schema"
 
 export function handleStaked(event: Staked): void {
   let id = event.transaction.hash.toHex() + "-" + event.logIndex.toString()
-  entity = new Staked(id)
+  let entity = new Stake(id)
 
   entity.contractAddress = event.params.contractAddress
   entity.staker = event.params.staker
@@ -21,7 +21,7 @@ export function handleStaked(event: Staked): void {
 
 export function handleUnstakeRequested(event: UnstakeRequested): void {
   let id = event.transaction.hash.toHex() + "-" + event.logIndex.toString()
-  entity = new UnstakeRequest(id)
+  let entity = new UnstakeRequest(id)
 
   entity.contractAddress = event.params.contractAddress
   entity.staker = event.params.staker
@@ -35,7 +35,7 @@ export function handleUnstakeRequested(event: UnstakeRequested): void {
 
 export function handleUnstaked(event: Unstaked): void {
   let id = event.transaction.hash.toHex() + "-" + event.logIndex.toString()
-  entity = new Unstake(id)
+  let entity = new Unstake(id)
 
   entity.contractAddress = event.params.contractAddress
   entity.staker = event.params.staker
